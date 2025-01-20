@@ -1,0 +1,9 @@
+recette(pizza, [farine, eau, levure, tomate, fromage, jambon]).
+recette(salade, [laitue, tomate, concombre, fromage, vinaigrette]).
+recette(omelette, [oeufs, lait, sel, poivre, beurre]).
+recette(pasta, [pates, tomate, ail, huile_olive, fromage]).
+recette(cake, [farine, sucre, beurre, oeufs, lait, levure]).
+
+peut_cuisiner(Recette, IngredientsDisponibles) :-
+    recette(Recette, IngredientsRecette),
+    subset(IngredientsRecette, IngredientsDisponibles).
